@@ -20,7 +20,7 @@ const idiomsArray = [
 ]
 
 //define variables
-let currentQuestionIndex = 0;
+let currentQuestionIndex
 let score = 0;
 
 //define elements
@@ -34,26 +34,56 @@ function displayStartScreen() {
 
 }
 
-function runQuiz() {
-
+function optionAClickHandler() {
+    checkAnswer(idiomsArray[currentQuestionIndex].meanings[0]);
 }
+
+function optionBClickHandler() {
+    checkAnswer(idiomsArray[currentQuestionIndex].meanings[1]);
+}
+
+function optionCClickHandler() {
+    checkAnswer(idiomsArray[currentQuestionIndex].meanings[2]);
+}
+
+function runQuiz() {
+    currentQuestionIndex = 0;
+    displayCurrentIdiom();
+    // Add event listeners to option buttons
+    document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
+    document.getElementById("option-btn-b").addEventListener("click", optionBClickHandler);
+    document.getElementById("option-btn-c").addEventListener("click", optionCClickHandler);
+    // Add event listener to next button
+    document.getElementById("submit-btn").addEventListener("click", displayNextIdiom);
+    displayNextIdiom();
+  }
 
 function displayCurrentIdiom() {
     //choose and display a random idiom from idiomsArray
     let currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
-    idiomElement.innerText = idiomsArray[currentIdiomIndex].idiom;
+    idiomElement.innerText = idiomsArray[currentQuestionIndex].idiom;
     //display meanings options
-    optionButtonA.innerText = idiomsArray[currentIdiomIndex].meanings[0];
-    optionButtonB.innerText = idiomsArray[currentIdiomIndex].meanings[1];
-    optionButtonC.innerText = idiomsArray[currentIdiomIndex].meanings[2];
+    optionButtonA.innerText = idiomsArray[currentQuestionIndex].meanings[0];
+    optionButtonB.innerText = idiomsArray[currentQuestionIndex].meanings[1];
+    optionButtonC.innerText = idiomsArray[currentQuestionIndex].meanings[2];
 }
 
 function displayNextIdiom() {
 
 }
 
-function checkAnswer() {
+function checkAnswer(selectedAnswer) {
+    const rightWrongElement = document.getElementById("right-or-wrong")
+    const scoreElement = document.getElementById("score");
 
+    if (idiomsArray[currentQuestionIndex].answer === selectedAnswer) {
+      rightWrongElement.innerText = "You got it right";
+      score++;
+      scoreElement.innerText = `Your score is: ${score} out of 10`;
+    } else {
+        rightWrongElement.innerText = "You got it wrong";
+      scoreElement.innerText = `Your score is: ${score} out of 10`;
+    }
 }
 
 function startNewQuiz() {
@@ -61,7 +91,7 @@ function startNewQuiz() {
 }
 
 
-displayCurrentIdiom();
+runQuiz();
 
 
 }
