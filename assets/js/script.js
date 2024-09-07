@@ -58,6 +58,13 @@ function runQuiz() {
     document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
     document.getElementById("option-btn-b").addEventListener("click", optionBClickHandler);
     document.getElementById("option-btn-c").addEventListener("click", optionCClickHandler);
+    // Clear score
+    document.getElementById("score").innerText = "Your score is 0 out of 10";
+    // Clear the inner HTML content of "right-or-wrong" element
+    document.getElementById("right-or-wrong").innerText = "Select a meaning";
+    //show next btn and hide start new quiz button
+    document.getElementById("next-btn").classList.remove("hidden");
+    document.getElementById("new-quiz-btn").classList.add("hidden");
   }
 
 function displayCurrentIdiom() {
@@ -100,9 +107,22 @@ function checkAnswer(selectedAnswer) {
     document.getElementById("next-btn").addEventListener("click", displayNextIdiom);
 }
 
-function startNewQuiz() {
-
+function endOfQuiz() {
+    //Display end of quiz message
+    document.getElementById("right-or-wrong").innerText = "That's the end of the quiz";
+    //hide next btn and show start new quiz button
+    document.getElementById("next-btn").classList.add("hidden");
+    document.getElementById("new-quiz-btn").classList.remove("hidden");
+    //remove event listener from next button
+    document.getElementById("next.btn"),removeEventListener("click", displayNextIdiom);
+    // add event listener to start new quiz button
+    document.getElementById("new-quiz-btn").addEventListener("click", runQuiz);
+    // Remove existing event listeners from option buttons
+    document.getElementById("option-btn-a").removeEventListener("click", optionAClickHandler);
+    document.getElementById("option-btn-b").removeEventListener("click", optionBClickHandler);
+    document.getElementById("option-btn-c").removeEventListener("click", optionCClickHandler);
 }
+
 
 
 runQuiz();
