@@ -7,6 +7,19 @@
     padding: 0;
 }
 
+/* define fonts */
+@font-face {
+    font-family: cupcake;
+    src: url(../fonts/Cupcake.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: TheArtistSans;
+    src: url(../fonts/TheArtistSans.otf);
+    font-display: swap;
+}
+
 /* Add flexbox styling to whole page for responsiveness */
 .page-container {
     display: flex;
@@ -22,9 +35,19 @@ header, main, footer {
     padding: 10px;
 }
 
-
 header {
     background-color: red;
+    letter-spacing: 0.2em;
+}
+
+h1 {
+    font-family: cupcake;
+    font-size: 3em;
+}
+
+h2 {
+    font-family: TheArtistSans;
+    font-size: 2em;
 }
 
 main {
