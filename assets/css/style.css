@@ -28,6 +28,7 @@
     /* Forces content to take up all vertical height of screen */
     height: 100vh;
     justify-content: space-between;
+    background-image: url("../images/question_marks_background_22.jpg");
 }
 
 header, main, footer {
@@ -36,7 +37,6 @@ header, main, footer {
 }
 
 header {
-    background-color: red;
     letter-spacing: 0.2em;
 }
 
@@ -51,7 +51,6 @@ h2 {
 }
 
 main {
-    background-color: blue;
     /* Forces main section to take up most of page container space */
     height: 100%;
     display: flex;
@@ -61,17 +60,16 @@ main {
 }
 
 footer {
-    background-color: green;
 }
 
 .quiz-container {
-    border: 2px white solid;
     width: 75%;
     height: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(141,102,222, 0.7);
 }
 
 .quiz-quiz {
