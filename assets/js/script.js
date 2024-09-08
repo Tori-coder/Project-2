@@ -3,17 +3,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const idiomsArray = [
     {
-        idiom: "idiom0",
-        meanings: ["meaninga0", "meaningb0", "meaningc0"],
-        answer: "meaninga0"
+        idiom: "don't count your chickens before they've hatched",
+        meanings: ["very very long long long long long long meaning", "very very long long long long long long meaning", "very very long long long long long long meaning"],
+        answer: "very very long long long long long long meaning"
     },
     {
-        idiom: "idiom1",
+        idiom: "a stitch in time saves nine",
         meanings: ["meaninga1", "meaningb1", "meaningc1"],
         answer: "meaninga1"
     },
     {
-        idiom: "idiom2",
+        idiom: "the grass is always greener",
         meanings: ["meaninga2", "meaningb2", "meaningc2"],
         answer: "meaninga0"
     }

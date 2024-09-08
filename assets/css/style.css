@@ -38,16 +38,31 @@ header, main, footer {
 
 header {
     letter-spacing: 0.2em;
+    padding-top: 1.7em;
 }
 
 h1 {
     font-family: cupcake;
     font-size: 3em;
+    /*make smaller for smaller screens with media query*/
 }
 
 h2 {
     font-family: TheArtistSans;
     font-size: 2em;
+    /*make smaller for smaller screens with media query*/
+}
+
+h3 {
+    font-family: TheArtistSans;
+    font-size: 2.3vw;
+    /*make smaller for smaller screens with media query*/
+}
+h4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2vw;
+    padding: 10px;
+    /*make smaller for smaller screens with media query*/
 }
 
 main {
@@ -73,13 +88,105 @@ footer {
 }
 
 .quiz-quiz {
-    border: 2px white solid;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
+.quiz-options {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 490px;
+}
+
+.quiz-result {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.3vw;
+}
+
+/* Quiz option button styles */
+.option-btn {
+    font-size: 1.3vw;
+    padding: 8px 15px;
+    border: 3px;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 6px 0;
+}
+
+/*next and new quiz button styles*/
+.next-btn, .new-quiz-btn {
+    font-size: 1.3vw;
+    padding: 8px 15px;
+    border: 3px;
+    border-style: groove;
+    border-radius: 10px;
+    margin: 6px 0;
+}
 
 .hidden {
     display: none;
+}
+
+
+/*tablets and larger smartphones*/
+@media (max-width: 769px) {
+    .option-btn {
+        font-size: 1.7vw;
+        padding: 6px 11px;
+        border: 2px;
+        border-style: groove;
+        border-radius: 7px;
+        margin: 4px 0;
+    }
+    .next-btn, .new-quiz-btn {
+        font-size: 1.7vw;
+        padding: 6px 11px;
+        border: 2px;
+        border-style: groove;
+        border-radius: 7px;
+        margin: 4px 0;
+    }
+    .quiz-result {
+        font-size: 1.7vw;
+    }
+}
+
+/*smaller smartphones*/
+@media (max-width: 481px) {
+    /*header*/
+    h1 {
+        font-size: 1.7em;
+    }
+    h2 {
+        font-size: 1.3em;
+    }
+    h3 {
+        font-size: 3.5vw;
+        padding: 0 10px;
+    }
+    .option-btn {
+        font-size: 3vw;
+        padding: 6px 11px;
+        border: 2px;
+        border-style: groove;
+        border-radius: 7px;
+        margin: 4px 0;
+    }
+    .next-btn, .new-quiz-btn {
+        font-size: 3vw;
+        padding: 6px 11px;
+        border: 2px;
+        border-style: groove;
+        border-radius: 7px;
+        margin: 4px 0;
+    }
+    .quiz-result {
+        font-size: 3vw;
+    }
 }
