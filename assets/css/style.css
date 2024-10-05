@@ -117,6 +117,7 @@ footer {
     border-style: groove;
     border-radius: 10px;
     margin: 6px 0;
+    width: 25vw;
 }
 
 /*next and new quiz button styles*/
