@@ -130,6 +130,7 @@ let score;
 
 //define elements
 const idiomElement = document.getElementById("idiom");
+const startButton = document.getElementById("start-btn");
 const optionButtonA = document.getElementById("option-btn-a");
 const optionButtonB = document.getElementById("option-btn-b");
 const optionButtonC = document.getElementById("option-btn-c");
@@ -145,16 +146,31 @@ function shuffleArray(array) {
   return array;
 }
 
+function startQuiz() {
+  startButton.addEventListener("click", function() {
+    const userName = document.getElementById("user-name").value;
+    if (userName ==="") {
+      alert("Please enter your name!");
+    }
+    else {
+      document.getElementById("start-screen").classList.remove("start-screen-container");
+      document.getElementById("start-screen").classList.add("hidden");
+      document.getElementById("quiz-container").classList.remove("hidden");
+      runQuiz();
+    }
+})
+}
+
 function optionAClickHandler() {
-    checkAnswer(shuffledArray[currentIdiomIndex].meanings[0]);
+  checkAnswer(shuffledArray[currentIdiomIndex].meanings[0]);
 }
 
 function optionBClickHandler() {
-    checkAnswer(shuffledArray[currentIdiomIndex].meanings[1]);
+  checkAnswer(shuffledArray[currentIdiomIndex].meanings[1]);
 }
 
 function optionCClickHandler() {
-    checkAnswer(shuffledArray[currentIdiomIndex].meanings[2]);
+  checkAnswer(shuffledArray[currentIdiomIndex].meanings[2]);
 }
 
 function runQuiz() {
@@ -164,8 +180,8 @@ function runQuiz() {
     //shuffle the array
     shuffledArray = shuffleArray(idiomsArray.slice());
     //unhide idiom and buttons
-    document.querySelector(".quiz-instruction").style.display = "block";
-    document.querySelector(".quiz-quiz").style.display = "block";
+    document.querySelector(".quiz-instruction").classList.remove("hidden");
+    document.querySelector(".quiz-quiz").classList.remove("hidden")
     //reset style of right-or-wrong text
     document.getElementById("right-or-wrong").style.fontFamily = "Georgia, 'Times New Roman', Times, serif";
     document.getElementById("right-or-wrong").style.fontSize = "1.3vw";
@@ -226,8 +242,8 @@ function checkAnswer(selectedAnswer) {
 
 function endOfQuiz() {
     //hide idiom and buttons
-    document.querySelector(".quiz-instruction").style.display = "none";
-    document.querySelector(".quiz-quiz").style.display = "none";
+    document.querySelector(".quiz-instruction").classList.add("hidden");
+    document.querySelector(".quiz-quiz").classList.add("hidden")
     //hide next btn and show start new quiz button
     document.getElementById("next-btn").classList.add("hidden");
     document.getElementById("new-quiz-btn").classList.remove("hidden");
@@ -248,6 +264,6 @@ function endOfQuiz() {
     document.getElementById("option-btn-c").removeEventListener("click", optionCClickHandler);
 }
 
-runQuiz();
+startQuiz();
 }
 );

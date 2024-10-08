@@ -20,7 +20,13 @@
             <h2 class="heading-2">Test your knowledge of English idioms!</h2>
         </header>
         <main>
-            <section class="quiz-container">
+            <section id="start-screen" class="start-screen-container">
+                    <div class="welcome">Welcome to the Quiz</div>
+                        <input type="text" class="text" id="user-name" placeholder="Enter your name" required>
+                        <button id="start-btn" class="start-btn">Start the quiz</button> 
+                    </div>
+            </section>
+            <section id="quiz-container" class="quiz-container hidden">
                 <div class="quiz-instruction">
                     <h3>Choose the correct meaning of the idiom given</h3>
                 </div>
@@ -42,7 +48,7 @@
                     <button class="new-quiz-btn" id="new-quiz-btn">Start new quiz</button>
                 </div>
             </section>
-        </main>
+        </main> 
         <footer>
             <p>Quiz created by <a href="https://github.com/tori-coder" target="_blank">Victoria Carey</a> for Code Institute Project 2 - Javascript Essentials</p>
         </footer>
