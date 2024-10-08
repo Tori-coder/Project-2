@@ -16,12 +16,12 @@ Visit the live site [here](https://tori-coder.github.io//)
 
 ## DESIGN
 
-### Colour Choices
-Colours were based on the background quiz image chosen and the palette created using [coolors.co](https://coolors.co)
+### Background and Colour Choices
+The background quiz image was chosen from [shutterstock.com](https://www.shutterstock.com/) and the colour palette created using [coolors.co](https://coolors.co)
 
 ### Fonts
 The main header is styled in Cupcake, from [befonts.com](https://cupcake-font.html). 
-Secondary headers are in TheArtistSans.
+Secondary headers are in TheArtistSans, also from [befonts.com](https://cupcake-font.html).
 The displayed idiom and answer section are in Times New Roman.
 Button text is the default button font.
 
@@ -36,6 +36,19 @@ Button text is the default button font.
 The quiz interface consists of an idiom and three buttons with alternative meanings. The user is instructed to choose the correct meaning of the idiom. On selection of one of the buttons, the user is informed if the meaning is correct or incorrect, and the score amended accordingly. Pressing the "next idiom" button loads the next idiom. 
 There are ten idioms per quiz. At the end of the quiz, the user is informed and the "next idiom" button is replaced by a "start new quiz" button to start a new quiz.
 
+### Footer
+
+The footer contains credit and link to my [github page](https://github.com/Tori-coder)
+
+![Footer](assets/images/readme-imgs/footer.png)
+
+### Potential Future Features
+
+- A feature for users to enter their name
+- A high scores table
+- A feature to remember and download incorrect answers for future learning
+- A better styled alert for correct/incorrect answers, including moving images and sound
+
 
 ## UX
 
@@ -44,7 +57,6 @@ There are ten idioms per quiz. At the end of the quiz, the user is informed and 
 * Instantly understand who and what the quiz is for;
 * Be able to navigate the quiz easily;
 * Understand the rules of the quiz before starting the game;
-* Know how many questions there will be;
 * Know the score during and after playing the quiz
 
 
@@ -93,9 +105,12 @@ The site was deployed on [github pages] from the main branch by the following st
 
 ## CREDITS
 
-- Quiz designed with limited reference to the Love Maths walkthrough project by Code Institute
+- Quiz designed with reference to the Love Maths walkthrough project by Code Institute
 - Favicon generated using [favicon.io](https://favicon.io/) using an image taken from [istock](https://www.istockphoto.com/)
 - Model image of live website on different devices generated at [techsini.com](https://techsini.com/multi-mockup/index.php)
+- Background image from [shutterstock.com](https://www.shutterstock.com/)
+- Colour palette created using [coolors.co](https://coolors.co)
+- Fonts from [befonts.com](https://cupcake-font.html)
 - Images converted using [cloudconvert.com](https://cloudconvert.com/webp-converter)
 - Images compressed using [imagecompressor.com](https://imagecompressor.com/)
-- This README file was constructed using [advice](https://github.com/kera-cudmore/readme-examples) from Kera Cudmore 
+- This README file was constructed using [advice](https://github.com/kera-cudmore/readme-examples) from Kera Cudmore

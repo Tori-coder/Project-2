@@ -130,7 +130,7 @@ const idiomElement = document.getElementById("idiom");
 const optionButtonA = document.getElementById("option-btn-a");
 const optionButtonB = document.getElementById("option-btn-b");
 const optionButtonC = document.getElementById("option-btn-c");
-const rightWrongElement = document.getElementById("right-or-wrong")
+const rightWrongElement = document.getElementById("right-or-wrong");
 const scoreElement = document.getElementById("score");
 
 //define functions
@@ -230,4 +230,4 @@ runQuiz();
 
 
 }
-)
+);
