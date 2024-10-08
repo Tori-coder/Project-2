@@ -137,10 +137,6 @@ const rightWrongElement = document.getElementById("right-or-wrong");
 const scoreElement = document.getElementById("score");
 
 //define functions
-function displayStartScreen() {
-
-}
-
 function shuffleArray(array) {
   for(let i=array.length -1; i>0; i--) {
     const j=Math.floor(Math.random()*(i+1));
@@ -167,6 +163,15 @@ function runQuiz() {
     score = 0;
     //shuffle the array
     shuffledArray = shuffleArray(idiomsArray.slice());
+    //unhide idiom and buttons
+    document.querySelector(".quiz-instruction").style.display = "block";
+    document.querySelector(".quiz-quiz").style.display = "block";
+    //reset style of right-or-wrong text
+    document.getElementById("right-or-wrong").style.fontFamily = "Georgia, 'Times New Roman', Times, serif";
+    document.getElementById("right-or-wrong").style.fontSize = "1.3vw";
+    document.getElementById("right-or-wrong").style.padding = "0";
+    //reset style of score text
+    scoreElement.style.fontSize = "1.3vw"
     displayCurrentIdiom();
     // Add event listeners to option buttons
     document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
@@ -220,12 +225,19 @@ function checkAnswer(selectedAnswer) {
 }
 
 function endOfQuiz() {
-    //Display end of quiz message
-    document.getElementById("right-or-wrong").innerText = "That's the end of the quiz";
-    scoreElement.innerText = `Your final score is: ${score} out of 10`;
+    //hide idiom and buttons
+    document.querySelector(".quiz-instruction").style.display = "none";
+    document.querySelector(".quiz-quiz").style.display = "none";
     //hide next btn and show start new quiz button
     document.getElementById("next-btn").classList.add("hidden");
     document.getElementById("new-quiz-btn").classList.remove("hidden");
+    //Display end of quiz message
+    document.getElementById("right-or-wrong").style.fontFamily = "TheArtistSans";
+    document.getElementById("right-or-wrong").style.fontSize = "3vw";
+    document.getElementById("right-or-wrong").style.padding = "2.5vw";
+    document.getElementById("right-or-wrong").innerText = "That's the end of the quiz";
+    scoreElement.style.fontSize = "2vw"
+    scoreElement.innerText = `Your final score is: ${score} out of 10`;
     //remove event listener from next button
     document.getElementById("next-btn").removeEventListener("click", displayNextIdiom);
     // add event listener to start new quiz button
@@ -236,10 +248,6 @@ function endOfQuiz() {
     document.getElementById("option-btn-c").removeEventListener("click", optionCClickHandler);
 }
 
-
-
 runQuiz();
-
-
 }
 );
