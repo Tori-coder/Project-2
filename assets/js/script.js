@@ -158,7 +158,7 @@ function startQuiz() {
       document.getElementById("quiz-container").classList.remove("hidden");
       runQuiz();
     }
-})
+});
 }
 
 function optionAClickHandler() {
@@ -181,13 +181,13 @@ function runQuiz() {
     shuffledArray = shuffleArray(idiomsArray.slice());
     //unhide idiom and buttons
     document.querySelector(".quiz-instruction").classList.remove("hidden");
-    document.querySelector(".quiz-quiz").classList.remove("hidden")
+    document.querySelector(".quiz-quiz").classList.remove("hidden");
     //reset style of right-or-wrong text
     document.getElementById("right-or-wrong").style.fontFamily = "Georgia, 'Times New Roman', Times, serif";
     document.getElementById("right-or-wrong").style.fontSize = "1.3vw";
     document.getElementById("right-or-wrong").style.padding = "0";
     //reset style of score text
-    scoreElement.style.fontSize = "1.3vw"
+    scoreElement.style.fontSize = "1.3vw";
     displayCurrentIdiom();
     // Add event listeners to option buttons
     document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
@@ -243,7 +243,7 @@ function checkAnswer(selectedAnswer) {
 function endOfQuiz() {
     //hide idiom and buttons
     document.querySelector(".quiz-instruction").classList.add("hidden");
-    document.querySelector(".quiz-quiz").classList.add("hidden")
+    document.querySelector(".quiz-quiz").classList.add("hidden");
     //hide next btn and show start new quiz button
     document.getElementById("next-btn").classList.add("hidden");
     document.getElementById("new-quiz-btn").classList.remove("hidden");
@@ -252,7 +252,7 @@ function endOfQuiz() {
     document.getElementById("right-or-wrong").style.fontSize = "3vw";
     document.getElementById("right-or-wrong").style.padding = "2.5vw";
     document.getElementById("right-or-wrong").innerText = "That's the end of the quiz";
-    scoreElement.style.fontSize = "2vw"
+    scoreElement.style.fontSize = "2vw";
     scoreElement.innerText = `Your final score is: ${score} out of 10`;
     //remove event listener from next button
     document.getElementById("next-btn").removeEventListener("click", displayNextIdiom);
