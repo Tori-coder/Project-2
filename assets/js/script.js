@@ -184,8 +184,8 @@ function displayNextIdiom() {
     document.getElementById("right-or-wrong").innerText = "Select a meaning";
     //increase the question index
     currentQuestionIndex++;
-    //check to see if 5 questions have been asked, and if so, run endOfQuiz
-    if (currentQuestionIndex===5) {
+    //check to see if 10 questions have been asked, and if so, run endOfQuiz
+    if (currentQuestionIndex===10) {
     endOfQuiz();
     } else {
     //generate a new random number to choose the current idiom from the array
@@ -198,10 +198,12 @@ function displayNextIdiom() {
 function checkAnswer(selectedAnswer) {
     if (idiomsArray[currentIdiomIndex].answer === selectedAnswer) {
       rightWrongElement.innerText = "You got it right";
+      alert("You got it right! 😃");
       score++;
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     } else {
         rightWrongElement.innerText = "You got it wrong";
+        alert("You got it wrong 😢");
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     }
     // Add event listener to next button

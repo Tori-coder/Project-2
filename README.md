@@ -69,7 +69,11 @@ The footer contains credit and link to my [github page](https://github.com/Tori-
 
 ### Fixed Bugs
 
+None
+
 ### Unfixed Bugs
+
+None
 
 
 ### Validation Testing
