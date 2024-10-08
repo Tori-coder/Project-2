@@ -120,6 +120,9 @@ const idiomsArray = [
     
   ];
 
+//create shuffled copy of idiomsArray
+let shuffledArray;
+
 //define variables
 let currentQuestionIndex;
 let currentIdiomIndex;
@@ -138,22 +141,32 @@ function displayStartScreen() {
 
 }
 
+function shuffleArray(array) {
+  for(let i=array.length -1; i>0; i--) {
+    const j=Math.floor(Math.random()*(i+1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 function optionAClickHandler() {
-    checkAnswer(idiomsArray[currentIdiomIndex].meanings[0]);
+    checkAnswer(shuffledArray[currentIdiomIndex].meanings[0]);
 }
 
 function optionBClickHandler() {
-    checkAnswer(idiomsArray[currentIdiomIndex].meanings[1]);
+    checkAnswer(shuffledArray[currentIdiomIndex].meanings[1]);
 }
 
 function optionCClickHandler() {
-    checkAnswer(idiomsArray[currentIdiomIndex].meanings[2]);
+    checkAnswer(shuffledArray[currentIdiomIndex].meanings[2]);
 }
 
 function runQuiz() {
     currentQuestionIndex = 0;
     currentIdiomIndex = 0;
     score = 0;
+    //shuffle the array
+    shuffledArray = shuffleArray(idiomsArray.slice());
     displayCurrentIdiom();
     // Add event listeners to option buttons
     document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
@@ -169,14 +182,11 @@ function runQuiz() {
   }
 
 function displayCurrentIdiom() {
-    //choose and display a random idiom from idiomsArray
-    currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
-    console.log(currentIdiomIndex);
-    idiomElement.innerText = idiomsArray[currentIdiomIndex].idiom;
+    idiomElement.innerText = shuffledArray[currentIdiomIndex].idiom;
     //display meanings options
-    optionButtonA.innerText = idiomsArray[currentIdiomIndex].meanings[0];
-    optionButtonB.innerText = idiomsArray[currentIdiomIndex].meanings[1];
-    optionButtonC.innerText = idiomsArray[currentIdiomIndex].meanings[2];
+    optionButtonA.innerText = shuffledArray[currentIdiomIndex].meanings[0];
+    optionButtonB.innerText = shuffledArray[currentIdiomIndex].meanings[1];
+    optionButtonC.innerText = shuffledArray[currentIdiomIndex].meanings[2];
 }
 
 function displayNextIdiom() {
@@ -188,15 +198,14 @@ function displayNextIdiom() {
     if (currentQuestionIndex===10) {
     endOfQuiz();
     } else {
-    //generate a new random number to choose the current idiom from the array
-    currentIdiomIndex = Math.floor(Math.random() * idiomsArray.length);
+    currentIdiomIndex++;
     //display the new idiom
     displayCurrentIdiom();
     }
 }
 
 function checkAnswer(selectedAnswer) {
-    if (idiomsArray[currentIdiomIndex].answer === selectedAnswer) {
+    if (shuffledArray[currentIdiomIndex].answer === selectedAnswer) {
       rightWrongElement.innerText = "You got it right";
       alert("You got it right! 😃");
       score++;
@@ -213,11 +222,12 @@ function checkAnswer(selectedAnswer) {
 function endOfQuiz() {
     //Display end of quiz message
     document.getElementById("right-or-wrong").innerText = "That's the end of the quiz";
+    scoreElement.innerText = `Your final score is: ${score} out of 10`;
     //hide next btn and show start new quiz button
     document.getElementById("next-btn").classList.add("hidden");
     document.getElementById("new-quiz-btn").classList.remove("hidden");
     //remove event listener from next button
-    document.getElementById("next.btn"),removeEventListener("click", displayNextIdiom);
+    document.getElementById("next-btn").removeEventListener("click", displayNextIdiom);
     // add event listener to start new quiz button
     document.getElementById("new-quiz-btn").addEventListener("click", runQuiz);
     // Remove existing event listeners from option buttons
