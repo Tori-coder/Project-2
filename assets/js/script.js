@@ -212,12 +212,20 @@ function displayNextIdiom() {
 function checkAnswer(selectedAnswer) {
     if (shuffledArray[currentIdiomIndex].answer === selectedAnswer) {
       rightWrongElement.innerText = "You got it right";
-      swal("You got it right! 😃");
+      swal({
+        text: "You got it right! 😃",
+        timer: 1000,
+        buttons: false
+      });
       score++;
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     } else {
         rightWrongElement.innerText = "You got it wrong";
-        swal("You got it wrong 😢");
+        swal({
+          text: "You got it wrong 😢",
+          timer: 1000,
+          buttons: false
+        });
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     }
     // Add event listener to next button
