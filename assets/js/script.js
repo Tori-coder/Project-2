@@ -173,10 +173,6 @@ function runQuiz() {
     //reset style of score text
     scoreElement.style.fontSize = "1.3vw"
     displayCurrentIdiom();
-    // Add event listeners to option buttons
-    document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
-    document.getElementById("option-btn-b").addEventListener("click", optionBClickHandler);
-    document.getElementById("option-btn-c").addEventListener("click", optionCClickHandler);
     // Clear score
     document.getElementById("score").innerText = "Your score is 0 out of 10";
     // Clear the inner HTML content of "right-or-wrong" element
@@ -192,6 +188,10 @@ function displayCurrentIdiom() {
     optionButtonA.innerText = shuffledArray[currentIdiomIndex].meanings[0];
     optionButtonB.innerText = shuffledArray[currentIdiomIndex].meanings[1];
     optionButtonC.innerText = shuffledArray[currentIdiomIndex].meanings[2];
+    // Add event listeners to option buttons
+    document.getElementById("option-btn-a").addEventListener("click", optionAClickHandler);
+    document.getElementById("option-btn-b").addEventListener("click", optionBClickHandler);
+    document.getElementById("option-btn-c").addEventListener("click", optionCClickHandler);
 }
 
 function displayNextIdiom() {
@@ -228,6 +228,10 @@ function checkAnswer(selectedAnswer) {
         });
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     }
+    // Remove event listeners from option buttons
+    document.getElementById("option-btn-a").removeEventListener("click", optionAClickHandler);
+    document.getElementById("option-btn-b").removeEventListener("click", optionBClickHandler);
+    document.getElementById("option-btn-c").removeEventListener("click", optionCClickHandler);
     // Add event listener to next button
     document.getElementById("next-btn").addEventListener("click", displayNextIdiom);
 }
