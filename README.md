@@ -122,4 +122,5 @@ The site was deployed on [github pages](https://tori-coder.github.io/Project-2/)
 - Fonts from [befonts.com](https://cupcake-font.html)
 - Images converted using [cloudconvert.com](https://cloudconvert.com/webp-converter)
 - Images compressed using [imagecompressor.com](https://imagecompressor.com/)
+- Styled popup alerts using [sweetalert](https://sweetalert.js.org/)
 - This README file was constructed using [advice](https://github.com/kera-cudmore/readme-examples) from Kera Cudmore
