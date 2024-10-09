@@ -25,7 +25,7 @@ The styling was deliberately kept simple in order to spend my limited time conce
 
 
 ### Background and Colour Choices
-- The background quiz image was chosen from [shutterstock.com](https://www.shutterstock.com/) and the colour palette created using [coolors.co](https://coolors.co)
+The background quiz image was chosen from [shutterstock.com](https://www.shutterstock.com/) and the colour palette created using [coolors.co](https://coolors.co)
 
 ### Fonts
 The main header is styled in Cupcake, from [befonts.com](https://cupcake-font.html). 
@@ -94,6 +94,7 @@ Owing to a leave of absence and a tight deadline on my return to the course, I w
 - I attempted to add a start screen to input user name (to be used later with the end of quiz message). The code is contained in the [start-screen](https://github.com/Tori-coder/Project-2/tree/start-screen) branch. However, hiding the start screen changed the flow and caused the quiz itself to display below the main quiz area (the html was rendering with the quiz-container AFTER the <main> section). 
 - Screenshot below. 
 - My research and exhaustive troubleshooting failed to identify the cause of this bug. As a result the branch was not merged to main. The start screen feature is included in [Potential Future Features](#potential-future-features).
+  
 ![start-screen-html](assets/images/readme-imgs/start-screen-html.png)
 ![start-screen](assets/images/readme-imgs/start-screen.png)
 
@@ -132,7 +133,7 @@ The quiz was manually tested by a number of users on various devices. The quiz w
 The site was deployed on [github pages](https://tori-coder.github.io/Project-2/) from the main branch by the following steps:
 * Git Hub repository choose Settings tab and Pages
 * From drop down menu source section pick main branch
-* Once the Save button is clicked the page provides the link to the completed website.(https://tori-coder.github.io//)
+* Once the Save button is clicked the page provides the link to the completed website.(https://tori-coder.github.io/Project-2/)
 
 ## CREDITS
 
