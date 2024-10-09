@@ -212,19 +212,23 @@ function displayNextIdiom() {
 function checkAnswer(selectedAnswer) {
     if (shuffledArray[currentIdiomIndex].answer === selectedAnswer) {
       rightWrongElement.innerText = "You got it right";
-      swal({
-        text: "You got it right! 😃",
+      swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "You got it right! 😃",
         timer: 1000,
-        buttons: false
+        showConfirmButton: false
       });
       score++;
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     } else {
         rightWrongElement.innerText = "You got it wrong";
-        swal({
-          text: "You got it wrong 😢",
+        swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "You got it wrong 😢",
           timer: 1000,
-          buttons: false
+          showConfirmButton: false
         });
       scoreElement.innerText = `Your score is: ${score} out of 10`;
     }
