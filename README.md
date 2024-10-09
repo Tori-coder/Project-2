@@ -52,7 +52,7 @@ The footer contains credit and link to my [github page](https://github.com/Tori-
 - A feature for users to enter their name
 - A high scores table
 - A feature to remember and download incorrect answers for future learning
-- A better styled alert for correct/incorrect answers, including moving images and sound
+- A styled alert for correct/incorrect answers, including moving images and sound
 
 
 ## UX
