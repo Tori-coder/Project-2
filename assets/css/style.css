@@ -15,7 +15,7 @@
 }
 
 @font-face {
-    font-family: TheArtistSans;
+    font-family: theartistsans;
     src: url(../fonts/TheArtistSans.otf);
     font-display: swap;
 }
@@ -45,25 +45,21 @@ header {
 h1 {
     font-family: cupcake;
     font-size: 3em;
-    /*make smaller for smaller screens with media query*/
 }
 
 h2 {
-    font-family: TheArtistSans;
+    font-family: theartistsans;
     font-size: 2em;
-    /*make smaller for smaller screens with media query*/
 }
 
 h3 {
-    font-family: TheArtistSans;
+    font-family: theartistsans;
     font-size: 2.3vw;
-    /*make smaller for smaller screens with media query*/
 }
 h4 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2vw;
     padding: 10px;
-    /*make smaller for smaller screens with media query*/
 }
 
 main {

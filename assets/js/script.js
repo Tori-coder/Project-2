@@ -105,7 +105,7 @@ const idiomsArray = [
     {
       "idiom": "It's not my cup of tea",
       "meanings": ["It's not a nice drink", "I don't like it", "I don't take responsibility"],
-      "answer": "Very rarely"
+      "answer": "I don't like it"
     },
     {
       "idiom": "Pull someone's leg",
@@ -180,7 +180,7 @@ function runQuiz() {
     //show next btn and hide start new quiz button
     document.getElementById("next-btn").classList.remove("hidden");
     document.getElementById("new-quiz-btn").classList.add("hidden");
-  }
+}
 
 function displayCurrentIdiom() {
     idiomElement.innerText = shuffledArray[currentIdiomIndex].idiom;

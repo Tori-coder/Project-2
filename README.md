@@ -16,13 +16,24 @@ Visit the live site [here](https://tori-coder.github.io/Project-2/)
 
 ## DESIGN
 
+### Wireframes
+Wireframes were sketched by hand. 
+
+The styling was deliberately kept simple in order to spend my limited time concentrating on the javascript.
+
+![wireframes](assets/images/readme-imgs/wireframe.jpg)
+
+
 ### Background and Colour Choices
-The background quiz image was chosen from [shutterstock.com](https://www.shutterstock.com/) and the colour palette created using [coolors.co](https://coolors.co)
+- The background quiz image was chosen from [shutterstock.com](https://www.shutterstock.com/) and the colour palette created using [coolors.co](https://coolors.co)
 
 ### Fonts
 The main header is styled in Cupcake, from [befonts.com](https://cupcake-font.html). 
+
 Secondary headers are in TheArtistSans, also from [befonts.com](https://cupcake-font.html).
+
 The displayed idiom and answer section are in Times New Roman.
+
 Button text is the default button font.
 
 
@@ -38,8 +49,11 @@ The header contains the quiz name and explanation of what the quiz tests.
 
 **Quiz interface**
 
-The quiz interface consists of an idiom and three buttons with alternative meanings. The user is instructed to choose the correct meaning of the idiom. On selection of one of the buttons, the user is informed if the meaning is correct or incorrect, and the score amended accordingly. Pressing the "next idiom" button loads the next idiom. 
-There are ten idioms per quiz. At the end of the quiz, the user is informed and the "next idiom" button is replaced by a "start new quiz" button to start a new quiz.
+- The quiz interface consists of an idiom and three buttons with alternative meanings. The user is instructed to click a button to choose the correct meaning of the idiom. 
+- On selection of one of the buttons, the user is informed if their choice is correct or incorrect, and the score is amended accordingly. Pressing the "next idiom" button loads the next idiom. 
+- There are ten idioms per quiz. At the end of the quiz, the user is informed and a "start new quiz" button is displayed, which runs the quiz again when clicked.
+
+![Quiz](assets/images/readme-imgs/quizmain.png)
 
 **Footer**
 
@@ -49,10 +63,13 @@ The footer contains credit and link to my [github page](https://github.com/Tori-
 
 ### Potential Future Features
 
-- A feature for users to enter their name
+Owing to a leave of absence and a tight deadline on my return to the course, I was unable to include many features that I wanted to. I shall continue to work on these after submission.
+
+- A start screen with feature for users to enter their name - see [Unfixed Bugs](###unfixed-bugs) below
 - A high scores table
 - A feature to download correct answers for future learning
 - A better styled alert for correct/incorrect answers, including moving images and sound
+- The javascript should be refactored to reduce repetition
 
 
 ## UX
@@ -69,12 +86,16 @@ The footer contains credit and link to my [github page](https://github.com/Tori-
 
 ### Fixed Bugs
 
-None
+- On first testing it was possible to click the option buttons more than once, allowing more than one guess per idiom. The event listeners were moved in the javascript so that after one guess the user has to click "next idiom".
+- Further user testing revealed one of the answers in the array to be wrong. The array was corrected.
 
 ### Unfixed Bugs
 
-None
-
+- I attempted to add a start screen to input user name (to be used later with the end of quiz message). The code is contained in the [start-screen](https://github.com/Tori-coder/Project-2/tree/start-screen) branch. However, hiding the start screen changed the flow and caused the quiz itself to display below the main quiz area (the html was rendering with the quiz-container AFTER the <main> section). 
+- Screenshot below. 
+- My research and exhaustive troubleshooting failed to identify the cause of this bug. As a result the branch was not merged to main. The start screen feature is included in [Potential Future Features](#potential-future-features).
+![start-screen-html](assets/images/readme-imgs/start-screen-html.png)
+![start-screen](assets/images/readme-imgs/start-screen.png)
 
 ### Validation Testing
 
@@ -102,8 +123,9 @@ None
 | Safari | ✔ | ✔ |
 
 ### Manual Testing
+Each time a feature was added, all the functions were tested to see if there was an impact.
 
-The quiz was manually tested by a number of users through various rounds and found to function correctly.
+The quiz was manually tested by a number of users on various devices. The quiz was played through various rounds. All features were found to function correctly.
 
 ## Deployment
 
