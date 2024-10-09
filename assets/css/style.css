@@ -39,6 +39,7 @@ header, main, footer {
 header {
     letter-spacing: 0.2em;
     padding-top: 1.7em;
+    background-color: rgb(147, 61, 228, 0.2);
 }
 
 h1 {
@@ -75,6 +76,7 @@ main {
 }
 
 footer {
+    background-color: rgb(147, 61, 228, 0.2);
 }
 
 .quiz-container {
@@ -84,7 +86,7 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(141,102,222, 0.7);
+    background-color: rgba(175, 159, 206, 0.85);
 }
 
 .quiz-quiz {
